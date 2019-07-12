@@ -1,0 +1,2076 @@
+{
+  "name": "Language Teacher",
+  "intents": [
+    {
+      "intent": "lesson",
+      "examples": [
+        {
+          "text": "start lesson"
+        },
+        {
+          "text": "begin lesson"
+        },
+        {
+          "text": "can we begin the lesson"
+        },
+        {
+          "text": "I want to start the lesson"
+        },
+        {
+          "text": "lesson"
+        }
+      ],
+      "description": "If the user wants to begin their customized lesson."
+    },
+    {
+      "intent": "test",
+      "examples": [
+        {
+          "text": "start test"
+        },
+        {
+          "text": "I want to begin the test"
+        },
+        {
+          "text": "test begin"
+        },
+        {
+          "text": "test"
+        },
+        {
+          "text": "let's do the test"
+        },
+        {
+          "text": "can I try the test"
+        },
+        {
+          "text": "test start"
+        },
+        {
+          "text": "begin test"
+        }
+      ],
+      "description": "User wants to begin the test based off of the customized lesson."
+    },
+    {
+      "intent": "diagram",
+      "examples": [
+        {
+          "text": "diagram"
+        },
+        {
+          "text": "show diagram"
+        },
+        {
+          "text": "give me the diagram"
+        },
+        {
+          "text": "show me the diagram"
+        },
+        {
+          "text": "display diagram"
+        },
+        {
+          "text": "please show me the diagram"
+        }
+      ],
+      "description": "Displays an image of the phrase showing the breakdown of the adj, verbs, nouns etc."
+    },
+    {
+      "intent": "end_lesson",
+      "examples": [
+        {
+          "text": "please end the lesson"
+        },
+        {
+          "text": "i am done with the lesson"
+        },
+        {
+          "text": "I don't want to continue the lesson"
+        },
+        {
+          "text": "can I get out of this lesson"
+        },
+        {
+          "text": "close lesson"
+        },
+        {
+          "text": "stop lesson"
+        },
+        {
+          "text": "I would like to stop the lesson"
+        },
+        {
+          "text": "end lesson"
+        }
+      ],
+      "description": "Lets the user end the lesson"
+    },
+    {
+      "intent": "parts_of_speech",
+      "examples": [
+        {
+          "text": "parts of speech"
+        },
+        {
+          "text": "can you give me the parts of speech"
+        },
+        {
+          "text": "gimmie the parts of speech"
+        },
+        {
+          "text": "hey blue baguette give me the parts of speech"
+        },
+        {
+          "text": "show me the parts of speech"
+        }
+      ],
+      "description": "Prompt Watson for the parts of speech for each word in the phrase"
+    },
+    {
+      "intent": "tryquestionagain",
+      "examples": [
+        {
+          "text": "Can I redo that question?"
+        },
+        {
+          "text": "show the that question again"
+        },
+        {
+          "text": "Let me try that quetion again"
+        },
+        {
+          "text": "can I please see that question again"
+        },
+        {
+          "text": "I would like to try that question again"
+        },
+        {
+          "text": "Try the question again"
+        }
+      ]
+    },
+    {
+      "intent": "correctAnswer",
+      "examples": [
+        {
+          "text": "This is right"
+        }
+      ]
+    },
+    {
+      "intent": "agree",
+      "examples": [
+        {
+          "text": "yeah"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "yep"
+        }
+      ]
+    },
+    {
+      "intent": "next",
+      "examples": [
+        {
+          "text": "go"
+        },
+        {
+          "text": "next"
+        },
+        {
+          "text": "continue"
+        },
+        {
+          "text": "keep going"
+        }
+      ],
+      "description": "continue to next sentence of the lesson"
+    },
+    {
+      "intent": "quiz",
+      "examples": [
+        {
+          "text": "Let's start the quiz"
+        }
+      ]
+    },
+    {
+      "intent": "audio",
+      "examples": [
+        {
+          "text": "audio recording"
+        },
+        {
+          "text": "can you give me the audio recording of the phrase"
+        },
+        {
+          "text": "what does the phrase sound like"
+        },
+        {
+          "text": "sound please"
+        },
+        {
+          "text": "How does this sound"
+        },
+        {
+          "text": "can you play an audio recording of the phrase"
+        }
+      ],
+      "description": "Prompts Watson for the audio recording of the phrase"
+    },
+    {
+      "intent": "showAnswer",
+      "examples": [
+        {
+          "text": "can you tell me the correct answer"
+        },
+        {
+          "text": "what is the correct answer?"
+        },
+        {
+          "text": "can you show me the correct answer"
+        },
+        {
+          "text": "Show me the answer"
+        },
+        {
+          "text": "I would like to see the answer"
+        },
+        {
+          "text": "please reveal the answer"
+        },
+        {
+          "text": "reveal answer"
+        },
+        {
+          "text": "show answer"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "wrongAnswer",
+      "examples": [
+        {
+          "text": "This is wrong"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Show answer 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The right answer is <? $my_result['q2cPhrase'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_54_1562823821507",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_59_1562824689908"
+      },
+      "conditions": "#showAnswer",
+      "dialog_node": "node_56_1562823821507",
+      "previous_sibling": "node_55_1562823821507"
+    },
+    {
+      "type": "standard",
+      "title": "Try again 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, let's try this again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_54_1562823821507",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_52_1562823821507"
+      },
+      "conditions": "#tryquestionagain",
+      "dialog_node": "node_55_1562823821507"
+    },
+    {
+      "type": "standard",
+      "title": "Restart Lesson",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_18_1562820850769",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_2_1562772553639"
+      },
+      "dialog_node": "node_58_1562824214713",
+      "previous_sibling": "node_57_1562824172446"
+    },
+    {
+      "type": "standard",
+      "title": "Start Test",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_18_1562820850769",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_47_1562823479240"
+      },
+      "conditions": "#quiz",
+      "dialog_node": "node_57_1562824172446"
+    },
+    {
+      "type": "standard",
+      "title": "Finish App",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Congrats on completing your daily lesson! Come back and try a new episode tomorrow!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_75_1562825140093",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_78_1562825268339",
+      "previous_sibling": "node_77_1562825219742"
+    },
+    {
+      "type": "standard",
+      "title": "Retake the Lesson",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_75_1562825140093",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1562772270825"
+      },
+      "conditions": "#lesson",
+      "dialog_node": "node_77_1562825219742",
+      "previous_sibling": "node_76_1562825185990"
+    },
+    {
+      "type": "standard",
+      "title": "Retake the Quiz",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_75_1562825140093",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_47_1562823479240"
+      },
+      "conditions": "#quiz",
+      "dialog_node": "node_76_1562825185990"
+    },
+    {
+      "type": "standard",
+      "title": "Test",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Try completing the lesson first!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1562772270825"
+      },
+      "conditions": "#test",
+      "dialog_node": "node_3_1562774754203",
+      "previous_sibling": "node_1_1562772270825"
+    },
+    {
+      "type": "standard",
+      "title": "Start Lesson",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let's start the lesson!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "my_credential": {
+          "api_key": "3a7fef10-10a7-47ce-8d13-64ca88aa5b4c:jB2hCyEKMg26SxKOpqG3PtHl30J9I38arJ1wiTDinp3jgoG7PFyfHt1rxolaR8hC"
+        }
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_2_1562772553639"
+      },
+      "conditions": "#lesson",
+      "dialog_node": "node_1_1562772270825"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ready to Continue in Phrase 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Type continue when you're ready!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1562777165376",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1562776456600"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_10_1562786478063",
+      "previous_sibling": "node_9_1562786472002"
+    },
+    {
+      "type": "standard",
+      "title": "Agree to Move on in Phrase 1",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1562777165376",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1562777200208"
+      },
+      "conditions": "#agree",
+      "dialog_node": "node_9_1562786472002"
+    },
+    {
+      "type": "standard",
+      "title": "Show answer 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The right answer is <? $my_result['q4cPhrase'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_66_1562824799624",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_69_1562824946008"
+      },
+      "conditions": "#showAnswer",
+      "dialog_node": "node_68_1562824799624",
+      "previous_sibling": "node_67_1562824799624"
+    },
+    {
+      "type": "standard",
+      "title": "Try again 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, let's try this again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_66_1562824799624",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_64_1562824799623"
+      },
+      "conditions": "#tryquestionagain",
+      "dialog_node": "node_67_1562824799624"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That was not the right answer, would you like to try again or do you want to know the right answer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_52_1562823821507",
+      "metadata": {},
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_54_1562823821507",
+      "previous_sibling": "node_53_1562823821507"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 2",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_52_1562823821507",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_59_1562824689908"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_53_1562823821507"
+    },
+    {
+      "type": "standard",
+      "title": "Show answer 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The right answer is <? $my_result['q1cPhrase'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_49_1562823683853",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_52_1562823821507"
+      },
+      "conditions": "#showAnswer",
+      "dialog_node": "node_51_1562823794360",
+      "previous_sibling": "node_50_1562823702937"
+    },
+    {
+      "type": "standard",
+      "title": "Try again 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Great, let's try this again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_49_1562823683853",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_47_1562823479240"
+      },
+      "conditions": "#tryquestionagain",
+      "dialog_node": "node_50_1562823702937"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ready to Continue in Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me know when you're ready to continue to the next phrase!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_33_1562821790419",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_30_1562821781014"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_35_1562821800965",
+      "previous_sibling": "node_34_1562821796913"
+    },
+    {
+      "type": "standard",
+      "title": "Agree to Move on in Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_33_1562821790419",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_17_1562820773742"
+      },
+      "conditions": "#agree",
+      "dialog_node": "node_34_1562821796913"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That was not the right answer, would you like to try again or do you want to know the right answer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_59_1562824689908",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_64_1562824799623"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_61_1562824689909",
+      "previous_sibling": "node_60_1562824689909"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 3",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_59_1562824689908",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_64_1562824799623"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_60_1562824689909"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ready to Continue in Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me know if you want to continue!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_21_1562821265629",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_11_1562789700601"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_23_1562821338893",
+      "previous_sibling": "node_22_1562821303643"
+    },
+    {
+      "type": "standard",
+      "title": "Agree to Move on in Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_21_1562821265629",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_15_1562820594454"
+      },
+      "conditions": "#agree",
+      "dialog_node": "node_22_1562821303643"
+    },
+    {
+      "type": "standard",
+      "title": "Go to End of Lesson from Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562777200208",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#end_lesson",
+      "dialog_node": "node_43_1562823249003",
+      "previous_sibling": "node_20_1562821218063"
+    },
+    {
+      "type": "standard",
+      "title": "Audio 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['aud2'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562777200208",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_11_1562789700601"
+      },
+      "conditions": "#audio",
+      "dialog_node": "node_20_1562821218063",
+      "previous_sibling": "node_19_1562821159291"
+    },
+    {
+      "type": "standard",
+      "title": "Parts of Speech 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['pos2'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562777200208",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_11_1562789700601"
+      },
+      "conditions": "#parts_of_speech",
+      "dialog_node": "node_19_1562821159291",
+      "previous_sibling": "node_11_1562789700601"
+    },
+    {
+      "type": "standard",
+      "title": "Anything Else in Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Would you like to continue your lesson?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562777200208",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_21_1562821265629",
+      "previous_sibling": "node_43_1562823249003"
+    },
+    {
+      "type": "standard",
+      "title": "Continue to Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562777200208",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_15_1562820594454"
+      },
+      "conditions": "#next",
+      "dialog_node": "node_11_1562789700601"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That was not the right answer, would you like to try again or do you want to know the right answer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_64_1562824799623",
+      "metadata": {},
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_66_1562824799624",
+      "previous_sibling": "node_65_1562824799624"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 4",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_64_1562824799623",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_69_1562824946008"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_65_1562824799624"
+    },
+    {
+      "type": "standard",
+      "title": "Go to End of Lesson from Phrase 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562772553639",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#end_lesson",
+      "dialog_node": "node_42_1562823097654",
+      "previous_sibling": "node_12_1562791136067"
+    },
+    {
+      "type": "standard",
+      "title": "Anything Else in Phrase 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Should I continue to the next question?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562772553639",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_7_1562777165376",
+      "previous_sibling": "node_42_1562823097654"
+    },
+    {
+      "type": "standard",
+      "title": "Parts of Speech 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['pos1'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562772553639",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1562776456600"
+      },
+      "conditions": "#parts_of_speech",
+      "dialog_node": "node_12_1562791136067",
+      "previous_sibling": "node_13_1562796609533"
+    },
+    {
+      "type": "standard",
+      "title": "Audio 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['aud1'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562772553639",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_5_1562776456600"
+      },
+      "conditions": "#audio",
+      "dialog_node": "node_13_1562796609533",
+      "previous_sibling": "node_5_1562776456600"
+    },
+    {
+      "type": "standard",
+      "title": "Continue to Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562772553639",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1562777200208"
+      },
+      "conditions": "#next",
+      "dialog_node": "node_5_1562776456600"
+    },
+    {
+      "type": "standard",
+      "title": "Audio 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['aud3'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1562820594454",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_24_1562821433193"
+      },
+      "conditions": "#audio",
+      "dialog_node": "node_26_1562821441488",
+      "previous_sibling": "node_25_1562821437609"
+    },
+    {
+      "type": "standard",
+      "title": "Anything Else in Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Are you ready to learn the next phrase?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1562820594454",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_27_1562821445002",
+      "previous_sibling": "node_44_1562823273849"
+    },
+    {
+      "type": "standard",
+      "title": "Parts of Speech 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['pos3'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1562820594454",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_24_1562821433193"
+      },
+      "conditions": "#parts_of_speech",
+      "dialog_node": "node_25_1562821437609",
+      "previous_sibling": "node_24_1562821433193"
+    },
+    {
+      "type": "standard",
+      "title": "Go to End of Lesson in Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1562820594454",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#end_lesson",
+      "dialog_node": "node_44_1562823273849",
+      "previous_sibling": "node_26_1562821441488"
+    },
+    {
+      "type": "standard",
+      "title": "Continue to Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1562820594454",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_16_1562820749410"
+      },
+      "conditions": "#next",
+      "dialog_node": "node_24_1562821433193"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That was not the right answer, would you like to try again or do you want to know the right answer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_69_1562824946008",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_75_1562825140093"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_71_1562824946009",
+      "previous_sibling": "node_70_1562824946009"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 5",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_69_1562824946008",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_75_1562825140093"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_70_1562824946009"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That was not the right answer, would you like to try again or do you want to know the right answer"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_47_1562823479240",
+      "metadata": {},
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_49_1562823683853",
+      "previous_sibling": "node_48_1562823642433"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 1",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_47_1562823479240",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_52_1562823821507"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_48_1562823642433"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ready to Continue in Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me know if you are ready for the next phrase!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_27_1562821445002",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_24_1562821433193"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_29_1562821723892",
+      "previous_sibling": "node_28_1562821681412"
+    },
+    {
+      "type": "standard",
+      "title": "Agree to Move on in Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_27_1562821445002",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_16_1562820749410"
+      },
+      "conditions": "#agree",
+      "dialog_node": "node_28_1562821681412"
+    },
+    {
+      "type": "standard",
+      "title": "Phrase 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['phrase3'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_15_1562820594454",
+      "previous_sibling": "node_8_1562777200208"
+    },
+    {
+      "type": "standard",
+      "title": "Phrase 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['phrase2'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_8_1562777200208",
+      "previous_sibling": "node_2_1562772553639"
+    },
+    {
+      "type": "standard",
+      "title": "Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['phrase4'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_16_1562820749410",
+      "previous_sibling": "node_15_1562820594454"
+    },
+    {
+      "type": "standard",
+      "title": "End of Lesson",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is the end of the lesson, would you like to review any particular phrase, restart the lesson or try taking a quiz?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_18_1562820850769",
+      "previous_sibling": "node_17_1562820773742"
+    },
+    {
+      "type": "standard",
+      "title": "Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['phrase5'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_17_1562820773742",
+      "previous_sibling": "node_16_1562820749410"
+    },
+    {
+      "type": "standard",
+      "title": "Phrase 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['phrase1'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1562772270825",
+      "metadata": {},
+      "dialog_node": "node_2_1562772553639"
+    },
+    {
+      "type": "standard",
+      "title": "Anything Else in Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Are you ready to continue?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_17_1562820773742",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_39_1562822349472",
+      "previous_sibling": "node_46_1562823327143"
+    },
+    {
+      "type": "standard",
+      "title": "Parts of Speech 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['pos5'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_17_1562820773742",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_36_1562822339240"
+      },
+      "conditions": "#parts_of_speech",
+      "dialog_node": "node_37_1562822343309",
+      "previous_sibling": "node_36_1562822339240"
+    },
+    {
+      "type": "standard",
+      "title": "Audio 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['aud5'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_17_1562820773742",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_36_1562822339240"
+      },
+      "conditions": "#audio",
+      "dialog_node": "node_38_1562822346489",
+      "previous_sibling": "node_37_1562822343309"
+    },
+    {
+      "type": "standard",
+      "title": "Go to End of Lesson in Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_17_1562820773742",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#end_lesson",
+      "dialog_node": "node_46_1562823327143",
+      "previous_sibling": "node_38_1562822346489"
+    },
+    {
+      "type": "standard",
+      "title": "Continue to End of Lesson",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_17_1562820773742",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#next",
+      "dialog_node": "node_36_1562822339240"
+    },
+    {
+      "type": "standard",
+      "title": "True/False 3",
+      "output": {
+        "generic": [
+          {
+            "title": "<? $my_result['question3'] ?>",
+            "options": [
+              {
+                "label": "<? $my_result['q3choice'][0] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q3oArr'][0] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q3choice'][1] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q3oArr'][1] ?>"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "dialog_node": "node_59_1562824689908",
+      "previous_sibling": "node_52_1562823821507"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 4",
+      "output": {
+        "generic": [
+          {
+            "title": "<? $my_result['question4'] ?>",
+            "options": [
+              {
+                "label": "<? $my_result['q4choice'][0] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q4oArr'][0] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q4choice'][1] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q4oArr'][1] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q4choice'][2] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q4oArr'][2] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q4choice'][3] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q4oArr'][3] ?>"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "dialog_node": "node_64_1562824799623",
+      "previous_sibling": "node_59_1562824689908"
+    },
+    {
+      "type": "standard",
+      "title": "True/False 5",
+      "output": {
+        "generic": [
+          {
+            "title": "<? $my_result['question5'] ?>",
+            "options": [
+              {
+                "label": "<? $my_result['q5choice'][0] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q5oArr'][0] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q5choice'][1] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q5oArr'][1] ?>"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "dialog_node": "node_69_1562824946008",
+      "previous_sibling": "node_64_1562824799623"
+    },
+    {
+      "type": "standard",
+      "title": "End of the Quiz",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Congrats, you have completed the quiz! Would you like to retry the lesson or take the quiz again?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "dialog_node": "node_75_1562825140093",
+      "previous_sibling": "node_69_1562824946008"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 2",
+      "output": {
+        "generic": [
+          {
+            "title": "<? $my_result['question2'] ?>",
+            "options": [
+              {
+                "label": "<? $my_result['q2choice'][0] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q2oArr'][0] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q2choice'][1] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q2oArr'][1] ?>"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "dialog_node": "node_52_1562823821507",
+      "previous_sibling": "node_47_1562823479240"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 1",
+      "output": {
+        "generic": [
+          {
+            "title": "<? $my_result['question1'] ?>",
+            "options": [
+              {
+                "label": "<? $my_result['q1choice'][0] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q1oArr'][0] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q1choice'][1] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q1oArr'][1] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q1choice'][2] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q1oArr'][2] ?>"
+                  }
+                }
+              },
+              {
+                "label": "<? $my_result['q1choice'][3] ?>",
+                "value": {
+                  "input": {
+                    "text": "<? $my_result['q1oArr'][3] ?>"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_3_1562774754203",
+      "metadata": {},
+      "conditions": "#quiz",
+      "dialog_node": "node_47_1562823479240"
+    },
+    {
+      "type": "standard",
+      "title": "Not Ready to Continue in Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me know when you are ready to continue!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_39_1562822349472",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_36_1562822339240"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_41_1562822357190",
+      "previous_sibling": "node_40_1562822353818"
+    },
+    {
+      "type": "standard",
+      "title": "Agree to Move on in Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_39_1562822349472",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#agree",
+      "dialog_node": "node_40_1562822353818"
+    },
+    {
+      "type": "standard",
+      "title": "Parts of Speech 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['pos4'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1562820749410",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_30_1562821781014"
+      },
+      "dialog_node": "node_31_1562821784347",
+      "previous_sibling": "node_30_1562821781014"
+    },
+    {
+      "type": "standard",
+      "title": "Audio 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $my_result['aud4'] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1562820749410",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_30_1562821781014"
+      },
+      "conditions": "#audio",
+      "dialog_node": "node_32_1562821787506",
+      "previous_sibling": "node_31_1562821784347"
+    },
+    {
+      "type": "standard",
+      "title": "Go to End of Lesson in Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1562820749410",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_18_1562820850769"
+      },
+      "conditions": "#end_lesson",
+      "dialog_node": "node_45_1562823301841",
+      "previous_sibling": "node_32_1562821787506"
+    },
+    {
+      "type": "standard",
+      "title": "Anything Else in Phrase 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Would you like to continue to the next phrase?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1562820749410",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_33_1562821790419",
+      "previous_sibling": "node_45_1562823301841"
+    },
+    {
+      "type": "standard",
+      "title": "Continue to Phrase 5",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_16_1562820749410",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_17_1562820773742"
+      },
+      "conditions": "#next",
+      "dialog_node": "node_30_1562821781014"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Try starting your customized lesson!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1562772270825"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi this is Blue Baguette your personalized language instructor. I'm here to help you learn from your favorite shows! Let's get started, shall we? Tell me to start the lesson anytime!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "actions": [
+        {
+          "name": "/Aria.Zhang@ibm.com_dev/Load Phrase 1",
+          "type": "cloud_function",
+          "parameters": {
+            "<parameter_name>": "<parameter_value>"
+          },
+          "credentials": "$my_credential",
+          "result_variable": "my_result"
+        }
+      ],
+      "context": {
+        "my_credential": {
+          "api_key": "3a7fef10-10a7-47ce-8d13-64ca88aa5b4c:jB2hCyEKMg26SxKOpqG3PtHl30J9I38arJ1wiTDinp3jgoG7PFyfHt1rxolaR8hC"
+        }
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "01c029bc-e06f-4605-9d08-b854c1f9abef",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
