@@ -1,0 +1,696 @@
+{
+  "name": "test",
+  "intents": [
+    {
+      "intent": "correctAnswer",
+      "examples": [
+        {
+          "text": "This is right"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "wrongAnswer",
+      "examples": [
+        {
+          "text": "This is wrong"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "quiz",
+      "examples": [
+        {
+          "text": "Let's start the quiz"
+        },
+        {
+          "text": "I'm ready for the quiz"
+        },
+        {
+          "text": "Quiz time"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "How was your day?"
+        },
+        {
+          "text": "How are you?"
+        },
+        {
+          "text": "How are you doing?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "endLesson",
+      "examples": [
+        {
+          "text": "end"
+        },
+        {
+          "text": "I would like to end the lesson"
+        },
+        {
+          "text": "I would like to end the session"
+        },
+        {
+          "text": "end session"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "startOver",
+      "examples": [
+        {
+          "text": "start over"
+        },
+        {
+          "text": "I would like to start over the lesson"
+        },
+        {
+          "text": "Let's start over the lesson"
+        },
+        {
+          "text": "start over the lesson"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "adjective",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "good",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Right answer 5",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_8_1562797762931",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1562791372500"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_10_1562797762945",
+      "previous_sibling": "node_9_1562797762945"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 5",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is not the right answer, let's try again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1562797762931",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1562797762931"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_9_1562797762945"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 2",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_5_1562789744409",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_2_1562796887767"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_6_1562791638376",
+      "previous_sibling": "node_2_1562790866248"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is not the right answer, let's try again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1562789744409",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1562789744409"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_2_1562790866248"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 4",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_5_1562797724407",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1562791372500"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_7_1562797724432",
+      "previous_sibling": "node_6_1562797724432"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 4",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is not the right answer, let's try again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1562797724407",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1562797724407"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_6_1562797724432"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 2",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is not the right answer, let's try again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1562731872720",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_3_1562731872720"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_7_1562790001161",
+      "previous_sibling": "node_4_1562731902843"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 1",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1562731872720",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1562789744409"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_4_1562731902843"
+    },
+    {
+      "type": "standard",
+      "title": "Right answer 3",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_2_1562796887767",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1562797762931"
+      },
+      "conditions": "#correctAnswer",
+      "dialog_node": "node_4_1562796887778",
+      "previous_sibling": "node_3_1562796887778"
+    },
+    {
+      "type": "standard",
+      "title": "Wrong answer 3",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This is not the right answer, let's try again"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1562796887767",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_2_1562796887767"
+      },
+      "conditions": "#wrongAnswer",
+      "dialog_node": "node_3_1562796887778"
+    },
+    {
+      "type": "standard",
+      "title": "Move to start over",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Alright, we will start over the lesson from the toop"
+              },
+              {
+                "text": "Alright let's start over"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1562791372500",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#startOver",
+      "dialog_node": "node_13_1562798392857",
+      "previous_sibling": "node_12_1562798309396"
+    },
+    {
+      "type": "standard",
+      "title": "Move to end",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_3_1562791372500",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_11_1562798240995"
+      },
+      "conditions": "#endLesson",
+      "dialog_node": "node_12_1562798309396"
+    },
+    {
+      "type": "standard",
+      "title": "End of quiz",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for completing the lesson, would you like to repeat the lesson, start a new lesson, or end the session?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_3_1562791372500",
+      "previous_sibling": "node_8_1562797762931"
+    },
+    {
+      "type": "standard",
+      "title": "True/False 3",
+      "output": {
+        "generic": [
+          {
+            "title": "Question 3",
+            "options": [
+              {
+                "label": "True",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "False",
+                "value": {
+                  "input": {
+                    "text": "This is right"
+                  }
+                }
+              }
+            ],
+            "description": "The description for question 3",
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_2_1562796887767",
+      "previous_sibling": "node_5_1562789744409"
+    },
+    {
+      "type": "standard",
+      "title": "True/False 5",
+      "output": {
+        "generic": [
+          {
+            "title": "Question 5",
+            "options": [
+              {
+                "label": "True",
+                "value": {
+                  "input": {
+                    "text": "This is right"
+                  }
+                }
+              },
+              {
+                "label": "False",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              }
+            ],
+            "description": "The description for question 3",
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_8_1562797762931",
+      "previous_sibling": "node_5_1562797724407"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_11_1562798240995"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Question 1"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "The Question",
+            "options": [
+              {
+                "label": "A",
+                "value": {
+                  "input": {
+                    "text": "This is right"
+                  }
+                }
+              },
+              {
+                "label": "B",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "C",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "D",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#quiz",
+      "dialog_node": "node_3_1562731872720",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 2",
+      "output": {
+        "generic": [
+          {
+            "title": "Question 2",
+            "options": [
+              {
+                "label": "A",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "B",
+                "value": {
+                  "input": {
+                    "text": "This is right"
+                  }
+                }
+              },
+              {
+                "label": "C",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "D",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_5_1562789744409",
+      "previous_sibling": "node_3_1562731872720"
+    },
+    {
+      "type": "standard",
+      "title": "Multiple Choice 4",
+      "output": {
+        "generic": [
+          {
+            "title": "Question 4",
+            "options": [
+              {
+                "label": "A",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "B",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              },
+              {
+                "label": "C",
+                "value": {
+                  "input": {
+                    "text": "This is right"
+                  }
+                }
+              },
+              {
+                "label": "D",
+                "value": {
+                  "input": {
+                    "text": "This is wrong"
+                  }
+                }
+              }
+            ],
+            "description": "The description for question 3",
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "digress_in": "does_not_return",
+      "dialog_node": "node_5_1562797724407",
+      "previous_sibling": "node_2_1562796887767"
+    },
+    {
+      "type": "standard",
+      "title": "End",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I hope you learned something today, see you tomorrow!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_11_1562798240995",
+      "previous_sibling": "node_3_1562791372500"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "36afe364-10c4-47b2-a127-2b3ec24378ff",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
