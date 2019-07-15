@@ -8,9 +8,9 @@ import random
 # CREDENTIALS #
 # THESE ARE ADMIN CREDENTIALS WITH ALL PERMISSIONS ENABLED.....NO PRESSURE #
 
-USERNAME = "ef15632f-93ee-4c1d-adbc-57c18369feae-bluemix"
-PASSWORD = "1124dcfb3c559ffd80306c960ea3fc7cf74814902493828c5bf47f3c3de88b02"
-ACCOUNT_NAME = "ef15632f-93ee-4c1d-adbc-57c18369feae-bluemix"
+USERNAME = "username"
+PASSWORD = "password"
+ACCOUNT_NAME = "account_name"
 
 # Use Cloudant to create a Cloudant client using account #
 
